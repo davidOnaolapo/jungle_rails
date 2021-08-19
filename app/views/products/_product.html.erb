@@ -16,7 +16,12 @@
       Details &raquo;
     <% end %>
   </footer>
+
   <aside class="price">
     <%= humanized_money_with_symbol product.price %>
+  </aside>
+
+  <aside class="<%= product.quantity > 0 ? 'hide' : 'sold-out' %>">
+    <p> SOLD OUT! <p>
   </aside>
 </article>
