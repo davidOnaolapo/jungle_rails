@@ -2,6 +2,10 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @my_orders = LineItem.where("order_id = ?", params[:id])
+    @products = Product.all
+    @my_price = @my_orders.sum("total_price_cents")
+    
   end
 
   def create
