@@ -2,7 +2,8 @@
 
   <header class="page-header">
     <% puts "My order is", @my_orders.inspect %>
-    <h1>Order <%= @order.id %></h1>
+    <h1>Thank you for your order! <%= @order.email%></h1>
+    <h3>Details of your order, order <%= @order.id%> are below</h3>
   </header>
 
   <div class="panel panel-default items">
