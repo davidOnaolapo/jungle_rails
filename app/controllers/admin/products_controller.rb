@@ -1,5 +1,5 @@
 class Admin::ProductsController < ApplicationController
-  http_basic_authenticate_with name: "jungle", password: "secret"
+  http_basic_authenticate_with name: "jungle", password: "books"
   puts "Env is ++", ENV['ADMIN_USERNAME']
   def index
     @products = Product.order(id: :desc).all
@@ -11,7 +11,7 @@ class Admin::ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-
+    puts "PRODUCT PARAMS +++", product_params
     if @product.save
       redirect_to [:admin, :products], notice: 'Product created!'
     else
