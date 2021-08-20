@@ -36,3 +36,20 @@ form.button_to {
 .signup{
   margin: 15px 0px 0px 50px
 }
+
+.login{
+  display: flex;
+  flex-direction: column;
+  width:30%
+}
+
+.login-button{
+  display: flex;
+  justify-content: center; 
+  background-color: rgb(199, 187, 206);
+  color:white;
+  font-size:18px
+}
+
+
+
