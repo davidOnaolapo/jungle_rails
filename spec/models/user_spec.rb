@@ -32,5 +32,23 @@ RSpec.describe User, type: :model do
       @user = User.new(first_name:'Dave', last_name: 'Onaolapo', email: 'talk2@yahoo.com', password:'asdfrer', password_confirmation:'asdfrer')
       expect(@user).to be_valid
     end 
-  end   
+  end  
+  
+  describe 'authenticate_with_credentials' do
+    it 'authenticates a legitimate user' do
+      @user = User.create(first_name:'Dav', last_name: 'Onaolapo', email: 'tl2@yahoo.com', password:'asdejjjd', password_confirmation:'asdejjjd')
+      expect(User.authenticate_with_credentials('tl2@yahoo.com', 'asdejjjd')).to be_kind_of(User)
+    end
+
+    it 'authenticates with spacing around the email' do
+      @user = User.create(first_name:'Da', last_name: 'Onaolapo', email: 'tl2e@yahoo.com', password:'asdejjjd', password_confirmation:'asdejjjd')
+      expect(User.authenticate_with_credentials(' tl2e@yahoo.com ', 'asdejjjd')).to be_kind_of(User)
+    end
+
+    it 'authenticates with different title cases for email' do
+      @user = User.create(first_name:'Dayy', last_name: 'Onaolapo', email: 'tle@yahoo.com', password:'asdejjjd', password_confirmation:'asdejjjd')
+      expect(User.authenticate_with_credentials(' tle@yaHoo.coM ', 'asdejjjd')).to be_kind_of(User)
+    end
+
+  end
 end
