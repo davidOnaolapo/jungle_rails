@@ -22,7 +22,6 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
     myProduct = all("article header h4").first.click 
   
     # DEBUG / VERIFY
-    sleep(2)
     save_screenshot
     expect(page).to have_css("section.products-show")  
   end

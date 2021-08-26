@@ -2,8 +2,10 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    #find specific order for display
     @my_orders = LineItem.where("order_id = ?", params[:id])
     @products = Product.all
+    #total price
     @my_price = @my_orders.sum("total_price_cents")
   end
 
@@ -33,7 +35,7 @@ class OrdersController < ApplicationController
     Stripe::Charge.create(
       source:      params[:stripeToken],
       amount:      cart_subtotal_cents,
-      description: "Khurram Virani's Jungle Order",
+      description: "David's Jungle Order",
       currency:    'cad'
     )
   end
