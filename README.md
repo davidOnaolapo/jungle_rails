@@ -4,9 +4,9 @@ A mini e-commerce application built with Ruby on Rails, where users can buy prod
 
 ## Final Product
 
-![""]()
+!["Welcome to the jungle"](https://github.com/davidOnaolapo/jungle_rails/blob/master/docs/home_jungle.png?raw=true)
 
-![""]()
+!["Checkout my Cart :)"](https://github.com/davidOnaolapo/jungle_rails/blob/master/docs/myCart_Jungle.png?raw=true)
 
 ## Setup
 
