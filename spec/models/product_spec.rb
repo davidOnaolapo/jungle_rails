@@ -5,7 +5,6 @@ RSpec.describe Product, type: :model do
     it 'should insert correctly' do 
       @category = Category.new(name:"Fun")
       @product = Product.create(name:'clohes', price: 2000, quantity: 2, category: @category)
-      puts @product.inspect
     end    
 
     it 'is invalid without a name' do
